@@ -1,0 +1,34 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "DOCKERFILE",
+    "dockerfilePath": "Dockerfile.railway"
+  },
+  "deploy": {
+    "numReplicas": 1,
+    "startCommand": "node src/index.js",
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 3,
+    "healthcheckPath": "/health",
+    "healthcheckTimeout": 10
+  },
+  "services": {
+    "pangeia-api": {
+      "name": "Pange.IA Evolution API",
+      "icon": "🌟",
+      "source": {
+        "repo": "https://github.com/fellipesaraiva88/pangeia-evolution-api"
+      },
+      "variables": {
+        "NODE_ENV": "production",
+        "PORT": "${{PORT}}",
+        "PANGEIA_APP_NAME": "Pange.IA Evolution Connector",
+        "PANGEIA_VERSION": "2.0.0",
+        "PANGEIA_GLASSMORPHISM_ENABLED": "true",
+        "PANGEIA_APPLE_DESIGN_ENABLED": "true",
+        "JWT_SECRET": "${{secret}}",
+        "DATABASE_URL": "${{POSTGRES.DATABASE_URL}}"
+      }
+    }
+  }
+}

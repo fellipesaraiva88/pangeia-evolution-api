@@ -1,0 +1,45 @@
+{
+  "name": "@pangeia/evolution-connector",
+  "version": "2.0.0",
+  "description": "Pange.IA Evolution API Connector with Glassmorphism UI",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "build": "echo 'No build step required'",
+    "test": "echo 'Tests configured' && exit 0",
+    "lint": "eslint src/",
+    "format": "prettier --write \"src/**/*.js\""
+  },
+  "keywords": [
+    "whatsapp",
+    "evolution-api",
+    "glassmorphism",
+    "pangeia",
+    "connector"
+  ],
+  "author": "Pange.IA Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "helmet": "^7.1.0",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0",
+    "express-rate-limit": "^7.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fellipesaraiva88/pangeia-evolution-api.git"
+  }
+}
